@@ -1,4 +1,4 @@
-import import_data
+import add
 import menu
 import sys
 import json
@@ -10,6 +10,7 @@ def button_click():
     choice = menu.DrawMainMenu()
     if choice == '1':
         # import_data.Import('people.csv',data)
+        
         print(data)
         button_click()
     elif choice == '2':
