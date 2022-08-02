@@ -8,8 +8,6 @@ import sys
 
 
 
-
-
 def Input():
     global surname
     msg = 'Введите Фамилию'
@@ -41,3 +39,12 @@ print(surname)
 #         pass  # user chose Continue
 #     else:
 #         sys.exit(0)           # user chose Cancel
+
+
+
+# new_data = {'name': 'Сидоров', 'phone': '+79033334455'}
+# NewElement('people.json',new_data)
+
+# data = [{'id': 1, 'name': 'Сидоров', 'phone': '+79033334455'}]
+# with open('people.json', 'w', encoding='utf8') as file:
+#     json.dump(data, file, ensure_ascii=False, indent=4)

@@ -21,11 +21,3 @@ def NewPerson():
     name = input()
     phone = input()
     return {'name': name, 'phone': phone}
-
-
-# new_data = {'name': 'Сидоров', 'phone': '+79033334455'}
-# NewElement('people.json',new_data)
-
-# data = [{'id': 1, 'name': 'Сидоров', 'phone': '+79033334455'}]
-# with open('people.json', 'w', encoding='utf8') as file:
-#     json.dump(data, file, ensure_ascii=False, indent=4)
