@@ -1,11 +1,10 @@
-def view_data(data, result):
-    print(f'\n{data} = {result}\n')
+import json
 
 
-dictionary = \
-    {
-        'up': '^',
-        'left': '<',
-        'down': 'v',
-        'right': '>'
-    }
+def PrintData(data):
+    with open(data, 'r') as file:
+        BD = json.load(file)
+        for i in BD:
+            for key, value in i.items():
+                print("{}: {}".format(key, value))
+            print('\n')

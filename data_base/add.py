@@ -16,8 +16,22 @@ def NewElement(file_path, new_data): # где "file_path" это названи�
         BD.append(new_data)
         with open(file_path, 'w', encoding='utf8') as outfile:
             json.dump(BD, outfile, ensure_ascii=False, indent=2)
+    print(f"Выполнено успешное добавление нового элемента: {new_data}")
+
 
 def NewPerson():
-    name = input()
-    phone = input()
+    name = input('Введите имя нового сотрудника: ')
+    phone = input('Введите его номер телефона в формате (+79012345678): ')
     return {'name': name, 'phone': phone}
+
+def NewCompany():
+    name = input('Введите название новой компании: ')
+    return {'name': name}
+
+def NewJob():
+    name = input('Введите название новой должности: ')
+    return {'name': name}
+
+def NewDepartment():
+    name = input('Введите название нового отдела: ')
+    return {'name': name}
