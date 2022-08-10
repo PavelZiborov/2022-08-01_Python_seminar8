@@ -3,12 +3,13 @@ import view
 import menu
 import sys
 import json
-import delete
+import change
 
 person_data = 'person.json'
 company_data = 'company.json'
 department_data = 'department.json'
 job_data = 'job.json'
+summary = 'summary.json'
 
 def button_click():
     choice_1 = menu.DrawMainMenu()
@@ -30,6 +31,10 @@ def button_click():
             add.NewElement(job_data, add.NewJob()) # добавление новой должности
             button_click()
         elif choice_2 == '5':
+            view.PrintSummary(summary)
+            add.NewElement(summary, add.NewEntryInSummary()) # добавление новой записи в сводной таблице
+            button_click()
+        elif choice_2 == '6':
             button_click()
         
 
@@ -40,16 +45,22 @@ def button_click():
         if choice_2 == '1':
             view.PrintData(person_data)
             print('Какой элемент удалить?')
-            delete.Element(person_data, int(input()))
+            change.Delete(person_data, add.Input())
             button_click()
         elif choice_2 == '2':
             view.PrintData(company_data)
+            print('Какой элемент удалить?')
+            change.Delete(company_data,  add.Input())
             button_click()
         elif choice_2 == '3':
             view.PrintData(department_data)
+            print('Какой элемент удалить?')
+            change.Delete(department_data,  add.Input())
             button_click()
         elif choice_2 == '4':
             view.PrintData(job_data)
+            print('Какой элемент удалить?')
+            change.Delete(job_data,  add.Input())
             button_click()
         elif choice_2 == '5':
             button_click()
@@ -57,18 +68,26 @@ def button_click():
     # изменение данных
     elif choice_1 == '3':
 
-        choice_2 = menu.DrawExtraMenu()
+        choice_2 = menu.DrawExtraMenu('В какой базе хотите произвести изменения: ')
         if choice_2 == '1':
-            print('не сделано')
+            view.PrintData(person_data)
+            print('Какой элемент изменить?')
+            change.Change(person_data, add.Input())
             button_click()
         elif choice_2 == '2':
-            print('не сделано')
+            view.PrintData(company_data)
+            print('Какой элемент изменить?')
+            change.Change(company_data, add.Input())
             button_click()
         elif choice_2 == '3':
-            print('не сделано')
+            view.PrintData(department_data)
+            print('Какой элемент изменить?')
+            change.Change(department_data, add.Input())
             button_click()
         elif choice_2 == '4':
-            print('не сделано')
+            view.PrintData(job_data)
+            print('Какой элемент изменить?')
+            change.Change(job_data, add.Input())
             button_click()
         elif choice_2 == '5':
             button_click()
@@ -90,7 +109,11 @@ def button_click():
             view.PrintData(job_data)
             button_click()
         elif choice_2 == '5':
+            view.PrintSummary(summary)
             button_click()
+        elif choice_2 == '6':
+            button_click()
+
 
     # экспорт БД
     elif choice_1 == '5':
