@@ -1,10 +1,11 @@
 import json
 import view
+from data import *
 
-person_data = 'person.json'
-company_data = 'company.json'
-department_data = 'department.json'
-job_data = 'job.json'
+# person_data = 'person.json'
+# company_data = 'company.json'
+# department_data = 'department.json'
+# job_data = 'job.json'
 
 
 def Delete(file_path, id):  # где "file_path" это название файла из которой необходимо удалить, id - это элемент который нужно удалить
@@ -35,10 +36,10 @@ def Change(file_path, id):   # где "file_path" это название фай
                     changed_obj = i
                     if 'name' in i.keys(): i['name'] = input('Введите новое имя: ')
                     if 'phone' in i.keys(): i['phone'] = input('Введите новый номер телефона: ')
-                    if 'id_person' in i.keys(): i['id_person'] = int(input(f'{view.PrintData(person_data)} \nНа какой id_person поменять: '))
-                    if 'id_company' in i.keys(): i['id_company'] = int(input(f'{view.PrintData(company_data)} \nНа какой id_company поменять: '))
-                    if 'id_department' in i.keys(): i['id_department'] = int(input(f'{view.PrintData(department_data)} \nНа какой id_department поменять: '))
-                    if 'id_job' in i.keys(): i['id_job'] = int(input(f'{view.PrintData(job_data)} \nНа какой id_job поменять: '))
+                    if 'id_person' in i.keys(): i['id_person'] = input(f'{view.PrintData(person_data)} \nНа какой id_person поменять: ')
+                    if 'id_company' in i.keys(): i['id_company'] = input(f'{view.PrintData(company_data)} \nНа какой id_company поменять: ')
+                    if 'id_department' in i.keys(): i['id_department'] = input(f'{view.PrintData(department_data)} \nНа какой id_department поменять: ')
+                    if 'id_job' in i.keys(): i['id_job'] = input(f'{view.PrintData(job_data)} \nНа какой id_job поменять: ')
                 except:
                     continue
         if changed_obj != None:

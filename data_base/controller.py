@@ -2,14 +2,10 @@ import add
 import view
 import menu
 import sys
-import json
 import change
+import export
+from data import *
 
-person_data = 'person.json'
-company_data = 'company.json'
-department_data = 'department.json'
-job_data = 'job.json'
-summary = 'summary.json'
 
 def button_click():
     choice_1 = menu.DrawMainMenu()
@@ -63,6 +59,11 @@ def button_click():
             change.Delete(job_data,  add.Input())
             button_click()
         elif choice_2 == '5':
+            view.PrintData(summary)
+            print('Какой элемент удалить?')
+            change.Delete(summary,  add.Input())
+            button_click()
+        elif choice_2 == '6':
             button_click()
 
     # изменение данных
@@ -90,6 +91,11 @@ def button_click():
             change.Change(job_data, add.Input())
             button_click()
         elif choice_2 == '5':
+            view.PrintSummary(summary)
+            print('Какой элемент изменить?')
+            change.Change(summary, add.Input())
+            button_click()
+        elif choice_2 == '6':
             button_click()
 
     # просмотр данных
@@ -118,20 +124,23 @@ def button_click():
     # экспорт БД
     elif choice_1 == '5':
 
-        choice_2 = menu.DrawExtraMenu()
+        choice_2 = menu.DrawExtraMenu('Какую базу хотите экспортировать: ')
         if choice_2 == '1':
-            print('не сделано')
+            export.DataExport('export_data.csv', person_data)
             button_click()
         elif choice_2 == '2':
-            print('не сделано')
+            export.DataExport('export_data.csv', company_data)
             button_click()
         elif choice_2 == '3':
-            print('не сделано')
+            export.DataExport('export_data.csv', department_data)
             button_click()
         elif choice_2 == '4':
-            print('не сделано')
+            export.DataExport('export_data.csv', job_data)
             button_click()
         elif choice_2 == '5':
+            export.DataExport('export_data.csv', summary)
+            button_click()
+        elif choice_2 == '6':
             button_click()
 
     # выход из меню

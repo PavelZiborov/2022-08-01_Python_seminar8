@@ -44,10 +44,10 @@ def NewDepartment():
     return {'name': name}
 
 def NewEntryInSummary():
-    id_person = int(input(f'{view.PrintData(person_data)}\nВведите id_person: '))
-    id_company = int(input(f'{view.PrintData(company_data)}\nВведите id_company: '))
-    id_department = int(input(f'{view.PrintData(department_data)}\nВведите id_department: '))
-    id_job = int(input(f'{view.PrintData(job_data)}\nВведите id_job: '))
+    id_person = input(f'{view.PrintData(person_data)}\nВведите id_person: ')
+    id_company = input(f'{view.PrintData(company_data)}\nВведите id_company: ')
+    id_department = input(f'{view.PrintData(department_data)}\nВведите id_department: ')
+    id_job = input(f'{view.PrintData(job_data)}\nВведите id_job: ')
     return {'id_person': id_person, 'id_company': id_company, 'id_department': id_department, 'id_job': id_job}
 
 

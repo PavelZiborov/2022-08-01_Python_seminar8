@@ -1,0 +1,5 @@
+person_data = 'person.json'
+company_data = 'company.json'
+department_data = 'department.json'
+job_data = 'job.json'
+summary = 'summary.json'
